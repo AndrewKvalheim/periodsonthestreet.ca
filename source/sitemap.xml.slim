@@ -1,0 +1,10 @@
+/ Documentation: http://www.sitemaps.org/protocol.html
+
+doctype xml
+
+urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'
+  - front_page = sitemap.find_resource_by_destination_path('/index.html')
+  url
+    loc= absolute_url(front_page)
+    lastmod= front_page.mtime.iso8601
+    changefreq monthly

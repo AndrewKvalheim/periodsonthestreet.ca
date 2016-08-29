@@ -1,0 +1,21 @@
+---
+title: Not Found
+---
+
+.head
+  .head-main
+    %h1
+      Oops, there's nothing here.
+    %p
+      Try browsing from the
+      = succeed ',' do
+        = link_to 'front page', '/'
+      = link_to 'contacting us', '/contact'
+      directly, or checking the
+      = link_to 'Internet Archive', 'https://archive.org/web/'
+      for old content.
+    %p.muted
+      Tip: If you find the Internet Archive helpful, consider thanking them with
+      a small
+      = succeed '.' do
+        = link_to 'donation', 'https://archive.org/donate/'

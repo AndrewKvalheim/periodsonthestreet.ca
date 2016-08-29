@@ -1,0 +1,112 @@
+@mixin inner-margin($size) {
+  &:not(:first-child) {
+    margin-left: $size;
+  }
+
+  &:not(:last-child) {
+    margin-right: $size;
+  }
+}
+
+body {
+  color: $foreground;
+  font-family: 'Crimson Text', serif;
+  font-size: $body-size;
+  text-rendering: optimizeLegibility;
+}
+
+.head {
+  color: $foreground-head;
+}
+
+.head-detail {
+  font-style: italic;
+}
+
+h1 {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: $heading-size;
+  font-weight: 200;
+  margin-bottom: 1em;
+  margin-top: 0;
+}
+
+a {
+  border-bottom-color: rgba($foreground, 0.15);
+  border-bottom-style: solid;
+  border-bottom-width: 1.5pt;
+  color: inherit;
+  text-decoration: none;
+  transition-delay: 0s;
+  transition-duration: 0.125s;
+  transition-property: border-bottom-color;
+
+  .head & {
+    border-bottom-color: rgba($foreground-head, 0.15);
+  }
+
+  .head-detail &:not(:hover) {
+    border-bottom-color: transparent;
+  }
+
+  &:hover {
+    border-bottom-color: rgba($foreground, 0.75);
+    transition-duration: 0.25s;
+
+    .head & {
+      border-bottom-color: rgba($foreground-head, 0.75);
+    }
+  }
+}
+
+ul.horizontal {
+  list-style: none;
+  padding-left: 0;
+
+  & > li {
+    display: inline-block;
+
+    &:not(:first-child)::before {
+      @extend .muted;
+      content: '∙';
+      font-size: 0.66em;
+      font-weight: 600;
+      margin-left: 1ch;
+      margin-right: 1ch;
+
+      .head-detail & {
+        margin-left: 1.25ch;
+      }
+    }
+  }
+
+}
+
+.muted {
+  opacity: $mute;
+}
+
+.at {
+  font-size: 0.60em;
+  font-weight: 600;
+  vertical-align: 10%;
+
+  .head-detail &.concatenated {
+    margin-left: 0.55ch;
+    margin-right: 0.25ch;
+  }
+
+  &.muted {
+    opacity: $mute * 0.9;
+  }
+}
+
+.dot {
+  &.concatenated {
+    @include inner-margin(0.075ch);
+  }
+}
+
+.concatenated {
+  @include inner-margin(0.15ch);
+}

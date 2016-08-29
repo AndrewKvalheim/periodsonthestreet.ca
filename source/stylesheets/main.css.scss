@@ -1,0 +1,53 @@
+$body-size: 14pt;
+$heading-size: $body-size * 2;
+
+$background: #fff;
+$foreground: #222;
+$background-head: #463C32;
+$foreground-head: #fff;
+
+$mute: 0.66;
+
+@import 'normalize/import-now';
+@import 'responsive';
+@import 'typography';
+
+body,
+html {
+  min-height: 100%;
+}
+
+body {
+  background-color: $background;
+}
+
+.head {
+  background-color: $background-head;
+  background-image: image-url('background.jpg');
+  background-position: 58% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  @include tablet {
+    background-position: 50% 0%;
+    justify-content: center;
+  }
+}
+
+.head-main {
+  margin: 1em 1em 0 1em;
+
+  @include tablet {
+    max-width: 18em;
+  }
+
+  @include laptop {
+    margin-left: 4em;
+    max-width: 20em;
+  }
+}

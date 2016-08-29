@@ -1,0 +1,29 @@
+---
+title: Periods on the Street
+description: >
+  We are a nonprofit organization that aims to provide feminine hygiene products
+  for the homeless women of Vancouver.
+---
+
+.head
+  .head-main
+    %h1
+      We are a nonprofit organization that aims to provide feminine hygiene products
+      for the homeless women of Vancouver.
+
+    .head-detail
+      %ul.horizontal
+        %li>= link_to 'In the Press', 'http://theotherpress.ca/douglas-organization-seeks-to-raise-awareness-of-homeless-womens-health-issues/#main'
+        %li>= link_to 'Twitter', 'https://twitter.com/periodsonthest1'
+        %li>= link_to 'Facebook', 'https://www.facebook.com/periodsonthestreet'
+
+      %p
+        = link_to 'mailto:info@periodsonthestreet.ca' do
+          %span.concatenated> info
+          %span.concatenated.muted.at> @
+          %span.concatenated> periods
+          %span.concatenated> on
+          %span.concatenated> the
+          %span.concatenated> street
+          %span.concatenated.muted.dot> .
+          %span.concatenated> ca

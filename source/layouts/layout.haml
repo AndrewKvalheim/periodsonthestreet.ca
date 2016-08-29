@@ -1,16 +1,27 @@
 !!!
-%html
+%html{lang: 'en-CA'}
   %head
     -# Configuration
     %meta{charset: 'utf-8'}
     %meta{'http-equiv' => 'x-ua-compatible', content: 'ie=edge'}
     %meta{name: 'viewport', content: 'width=device-width'}
 
-    -# Metadata
+    -# Identity
+    %link{rel: 'canonical', href: absolute_url(current_page)}
+    %meta{property: 'og:url', content: absolute_url(current_page)}
+
+    -# Site content
+    %meta{property: 'og:site_name', content: data.site.name}
+
+    -# Page content
+    %meta{property: 'og:type', content: current_page.data.type || 'website'}
     %title= current_page.data.title
+    %meta{property: 'og:title', content: current_page.data.title}
     - if current_page.data.description
       %meta{name: 'description', content: current_page.data.description}
-    %link{rel: 'canonical', href: absolute_url(current_page)}
+      %meta{property: 'og:description', content: current_page.data.description}
+    - if current_page.data.image
+      %meta{property: 'og:image', content: absolute_url(image_path(current_page.data.image))}
 
     -# Assets
     = partial 'favicon'

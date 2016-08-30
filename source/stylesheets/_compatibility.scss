@@ -1,0 +1,9 @@
+// Bug: https://connect.microsoft.com/IE/feedback/details/802625
+// Workaround: https://codepen.io/chriswrightdesign/pen/emQNGZ/
+.workaround_flex-min-height {
+  display: flex;
+
+  & > div {
+    flex: 1 0;
+  }
+}

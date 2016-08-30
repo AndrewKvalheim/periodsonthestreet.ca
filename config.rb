@@ -2,6 +2,9 @@
 # Content
 #
 
+# Source annotations
+ignore '*README.md'
+
 # Pretty URLs
 activate :directory_indexes
 

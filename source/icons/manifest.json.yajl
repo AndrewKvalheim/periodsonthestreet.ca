@@ -1,5 +1,5 @@
 json = {
-	name: data.site.name,
+	name: data.organization.name,
 	icons: [
 		{
 			src: asset_url('/icons/android-chrome-192x192.png'),

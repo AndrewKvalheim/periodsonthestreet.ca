@@ -16,11 +16,11 @@ image: background.jpg
       .head-detail
         %ul.horizontal
           %li>= link_to 'In the Press', 'http://theotherpress.ca/douglas-organization-seeks-to-raise-awareness-of-homeless-womens-health-issues/#main'
-          %li>= link_to 'Twitter', 'https://twitter.com/periodsonthest1'
-          %li>= link_to 'Facebook', 'https://www.facebook.com/periodsonthestreet'
+          %li>= link_to 'Twitter', find(data.organization.sameAs, hostname: 'twitter.com')
+          %li>= link_to 'Facebook', find(data.organization.sameAs, hostname: 'www.facebook.com')
 
         %p
-          = link_to 'mailto:info@periodsonthestreet.ca' do
+          = link_to "mailto:#{data.organization.email}" do
             %span.concatenated> info
             %span.concatenated.muted.at> @
             %span.concatenated> periods

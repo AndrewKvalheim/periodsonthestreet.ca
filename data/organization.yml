@@ -1,0 +1,25 @@
+'@context': http://schema.org
+'@type': organization
+name: Periods on the Street
+description: >
+  A nonprofit organization that aims to provide feminine hygiene products for
+  the homeless women of Vancouver
+url: https://periodsonthestreet.ca
+email: info@periodsonthestreet.ca
+areaServed:
+  '@type': City
+  name: Vancouver
+  address:
+    '@type': PostalAddress
+    addressLocality: Vancouver
+    addressRegion: BC
+    addressCountry: CA
+sameAs:
+  - !ruby/object:URI::HTTPS
+    scheme: https
+    host: www.facebook.com
+    path: /periodsonthestreet
+  - !ruby/object:URI::HTTPS
+    scheme: https
+    host: twitter.com
+    path: /periodsonthest1

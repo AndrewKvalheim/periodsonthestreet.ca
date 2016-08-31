@@ -9,6 +9,6 @@ module UrlHelpers
            else asset_url(target, *args)
            end
 
-    URI.join(data.site.url, path).to_s
+    URI.join(data.organization.url, path).to_s
   end
 end

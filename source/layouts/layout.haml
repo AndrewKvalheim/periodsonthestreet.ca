@@ -11,7 +11,8 @@
     %meta{property: 'og:url', content: absolute_url(current_page)}
 
     -# Site content
-    %meta{property: 'og:site_name', content: data.site.name}
+    %meta{property: 'og:site_name', content: data.organization.name}
+    %script{type: 'application/ld+json'}= data.organization.to_json
 
     -# Page content
     %meta{property: 'og:type', content: current_page.data.type || 'website'}

@@ -21,11 +21,4 @@ image: background.jpg
 
         %p
           = link_to "mailto:#{data.organization.email}" do
-            %span.concatenated> info
-            %span.concatenated.muted.at> @
-            %span.concatenated> periods
-            %span.concatenated> on
-            %span.concatenated> the
-            %span.concatenated> street
-            %span.concatenated.muted.dot> .
-            %span.concatenated> ca
+            = mark_up_fragments(data.organization.email)

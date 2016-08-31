@@ -1,11 +1,17 @@
-@mixin inner-margin($size) {
+@mixin inner-margin($left, $right: null) {
+  $right: $left !default;
+
   &:not(:first-child) {
-    margin-left: $size;
+    margin-left: $left;
   }
 
   &:not(:last-child) {
-    margin-right: $size;
+    margin-right: $right;
   }
+}
+
+@mixin mute($adjustment: 1) {
+  opacity: $mute * $adjustment;
 }
 
 body {
@@ -67,7 +73,7 @@ ul.horizontal {
     display: inline-block;
 
     &:not(:first-child)::before {
-      @extend .muted;
+      @include mute;
       content: '∙';
       font-size: 0.66em;
       font-weight: 600;
@@ -83,30 +89,22 @@ ul.horizontal {
 }
 
 .muted {
-  opacity: $mute;
+  @include mute;
 }
 
-.at {
-  font-size: 0.60em;
-  font-weight: 600;
-  vertical-align: 10%;
-
-  .head-detail &.concatenated {
-    margin-left: 0.55ch;
-    margin-right: 0.25ch;
-  }
-
-  &.muted {
-    opacity: $mute * 0.9;
-  }
-}
-
-.dot {
-  &.concatenated {
-    @include inner-margin(0.075ch);
-  }
-}
-
-.concatenated {
+.string-fragment {
   @include inner-margin(0.15ch);
+
+  &.at {
+    @include inner-margin(0.55ch, 0.25ch);
+    @include mute(0.9);
+    font-size: 0.60em;
+    font-weight: 600;
+    vertical-align: 10%;
+  }
+
+  &.dot {
+    @include inner-margin(0.075ch);
+    @include mute;
+  }
 }

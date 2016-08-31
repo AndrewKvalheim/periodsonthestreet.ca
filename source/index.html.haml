@@ -1,17 +1,12 @@
----
-title: Periods on the Street
-description: >
-  We are a nonprofit organization that aims to provide feminine hygiene products
-  for the homeless women of Vancouver.
-image: background.jpg
----
+:ruby
+  current_page.data[:title]       = data.organization.name
+  current_page.data[:description] = data.organization.description
+  current_page.data[:image]       = 'background.jpg'
 
 .workaround_flex-min-height
   .head
     .head-main
-      %h1
-        We are a nonprofit organization that aims to provide feminine hygiene products
-        for the homeless women of Vancouver.
+      %h1= data.organization.description
 
       .head-detail
         %ul.horizontal

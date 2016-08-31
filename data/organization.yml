@@ -2,8 +2,8 @@
 '@type': organization
 name: Periods on the Street
 description: >
-  A nonprofit organization that aims to provide feminine hygiene products for
-  the homeless women of Vancouver
+  We are a nonprofit organization that aims to provide feminine hygiene products
+  for the homeless women of Vancouver.
 url: https://periodsonthestreet.ca
 email: !ruby/struct:FragmentedString
   fragments: ['info', '@', 'periods', 'on', 'the', 'street', '.', 'ca']

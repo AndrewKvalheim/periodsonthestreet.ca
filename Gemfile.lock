@@ -131,7 +131,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.2)
       execjs (>= 0.3.0, < 3)
-    yajl-ruby (1.2.1)
+    yajl-ruby (1.3.1)
 
 PLATFORMS
   ruby
@@ -146,7 +146,7 @@ DEPENDENCIES
   normalize-scss
   s3_website (~> 2.14)
   slim (~> 3.0)
-  yajl-ruby (~> 1.2)
+  yajl-ruby (~> 1.3)
 
 RUBY VERSION
    ruby 2.3.1p112
